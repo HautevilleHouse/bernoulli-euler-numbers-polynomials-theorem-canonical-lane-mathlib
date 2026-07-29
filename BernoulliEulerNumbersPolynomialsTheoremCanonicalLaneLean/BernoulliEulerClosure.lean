@@ -1,0 +1,16 @@
+import BernoulliEulerNumbersPolynomialsTheoremCanonicalLaneLean.BernoulliEulerCertificate
+
+namespace HautevilleHouse
+namespace BernoulliEulerNumbersPolynomialsTheoremCanonicalLaneLean
+
+def BernoulliEulerAdmittedAnalyticClosure : Prop :=
+  BernoulliEulerCertificateClosed bernoulliEulerCertificate ∧
+  ConstrainedBernoulliEulerClosure bernoulliEulerAdmissible
+
+theorem bernoulli_euler_admitted_analytic_closure_checked :
+    BernoulliEulerAdmittedAnalyticClosure := by
+  exact And.intro bernoulli_euler_certificate_closed
+    (constrained_bernoulli_euler_closure bernoulliEulerAdmissible)
+
+end BernoulliEulerNumbersPolynomialsTheoremCanonicalLaneLean
+end HautevilleHouse

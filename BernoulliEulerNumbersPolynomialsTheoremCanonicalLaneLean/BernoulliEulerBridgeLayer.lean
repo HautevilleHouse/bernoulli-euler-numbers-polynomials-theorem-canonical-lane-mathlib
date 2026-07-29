@@ -1,0 +1,16 @@
+import canonicalLaneMathlib.AdmissibleClass
+import HautevilleHouse.BernoulliEulerNumbersPolynomialsTheoremCanonicalLaneLean.BernoulliEulerDefs
+import HautevilleHouse.BernoulliEulerNumbersPolynomialsTheoremCanonicalLaneLean.VonStaudtClausenLayer
+import HautevilleHouse.BernoulliEulerNumbersPolynomialsTheoremCanonicalLaneLean.KummerCongruenceLayer
+
+namespace HautevilleHouse
+namespace BernoulliEulerNumbersPolynomialsTheoremCanonicalLaneLean
+
+def bridgeClosed (A : AdmissibleClass) : Prop :=
+  NativeBridgeClosed A.object
+
+theorem bridge_from_admissible_class (A : AdmissibleClass) : bridgeClosed A :=
+  And.intro A.object.sourceKeyChecked A.object.theoremObjectChecked
+
+end BernoulliEulerNumbersPolynomialsTheoremCanonicalLaneLean
+end HautevilleHouse
